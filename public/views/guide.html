@@ -1,0 +1,118 @@
+ <div class="guide">
+    <div class="intro">
+      <img class="img-responsive center-block" src="img/heroPortraits/{{hero.name.split('npc_dota_hero_').pop()}}_full.png" alt="" style="border-radius: 100px;"/>
+      <h1>{{hero.localized_name}}</h1>
+      <div class="col-md-12 intro-include" ng-bind-html="guide.intro">
+
+      </div>
+    </div>
+
+    <!--skills -->
+    <div class="tab">
+      <div class="col-md-12 tab-header" ng-click="showSkills = !showSkills">
+        <h2>Skills and Talents</h2>
+      </div>
+      <div class="col-md-12 tab-content" ng-show="showSkills" ng-include="'/views/skills.html'">
+
+      </div>
+      <div class="col-md-12 tab-content skills" ng-show="showSkills" ng-bind-html="guide.skills">
+
+      </div>
+    </div>
+
+    <!--skill builds-->
+    <div class="tab">
+      <div class="col-md-12 tab-header" ng-click="showSkillBuild = !showSkillBuild">
+        <h2>Skill Build</h2>
+      </div>
+      <div class="col-md-12 tab-content" ng-show="showSkillBuild" ng-include="'/views/skillbuild.html'">
+
+      </div>
+    </div>
+
+    <!--playstyle -->
+    <div class="tab">
+      <div class="col-md-12 tab-header" ng-click="showPlaystyle = !showPlaystyle">
+        <h2>Playstyle</h2>
+      </div>
+      <div class="col-md-12 tab-content" ng-show="showPlaystyle" ng-bind-html="guide.playstyle">
+
+      </div>
+    </div>
+
+    <!--itemization -->
+    <div class="tab">
+      <div class="col-md-12 tab-header" ng-click="showItemization = !showItemization" >
+        <h2>Itemization</h2>
+      </div>
+      <div class="col-md-12 tab-content" ng-show="showItemization" ng-bind-html="guide.itemization">
+
+      </div>
+    </div>
+    <!--drafting -->
+    <div class="tab">
+      <div class="col-md-12 tab-header" ng-click="showDrafting = !showDrafting">
+        <h2>Drafting</h2>
+      </div>
+      <div class="col-md-12 tab-content" ng-show="showDrafting" ng-bind-html="guide.drafting">
+
+      </div>
+    </div>
+
+
+    <!--your matches -->
+    <div class="tab">
+      <div class="col-md-12 tab-header" ng-click="showMatches = !showMatches">
+        <h2>Your matches as {{hero.localized_name}}</h2>
+      </div>
+      <div class="col-md-12 tab-content" ng-show="showMatches">
+        {{winPercentage}}% win-rate {{wonMatches}} wins {{lostMatches}} losses average K/D/A {{killsAvg}}/{{deathsAvg}}/{{assistsAvg}}
+        <table class="table">
+          <thead>
+            <th>
+              Match ID
+            </th>
+            <th>
+              Team
+            </th>
+            <th>
+              K/D/A
+            </th>
+            <th>
+              win/loss
+            </th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="match in matches">
+              <td>
+                <a href="https://www.opendota.com/matches/{{match.match_id}}"> {{match.match_id}}</a>
+              </td>
+              <td>
+                {{match.parsed.team}}
+              </td>
+              <td>
+                {{match.kills}}/{{match.deaths}}/{{match.assists}}
+              </td>
+              <td ng-show="match.parsed.won" style="color: green">
+                Win
+              </td>
+              <td ng-show="!match.parsed.won" style="color: red">
+                Loss
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--analysis -->
+    <div class="tab">
+      <div class="col-md-12 tab-header" ng-click="showAnalysis = !showAnalysis">
+        <h2>Analysis</h2>
+      </div>
+      <div class="col-md-12 tab-content" ng-show="showAnalysis">
+        <input type="text" name="name" value="" placeholder="Player ID" ng-model="playerID">
+        <button type="button" name="button" ng-click="getMatches()">do the thing</button>
+        <button type="button" name="button" ng-click="analyze()">test</button>
+      </div>
+    </div>
+</div>

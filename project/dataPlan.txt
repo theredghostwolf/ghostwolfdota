@@ -1,0 +1,54 @@
+database: MongoDB, JSON documents
+
+collections:
+
+* heroes
+* abilities
+* items
+
+Schemas:
+
+abilities Schema : {
+  data: {type: [String], default: []},
+  name: {type: String, default: ''},
+  cooldown: {type: String, default: ''},
+  mana: {type: String, default: ''},
+  description: {type: String, default: ''},
+  icon: {type: String, default: ''},
+  liveIcon: {type: String, default: ''},
+  lore: {type: String, default: ''}
+}
+
+Hero Schema : {
+  name : {type : String, default: ''},
+  id: {type: Number, default: 0},
+  localized_name: {type: String, default: ''},
+  primary_attr: {type: String, default: ''},
+  attack_type: {type: String, default: ''},
+  roles: {type: [String], default: []},
+  legs: {type: Number, default: 2},
+  has_guide: {type: Boolean, default: false},
+  abilities : [abilitySchema], //this will be replaced with and will have to be queried from abilities collection based on hero ID
+  stats: {
+    agiBase: {type: Number, default: 0},
+    agiGain: {type: Number, default: 0},
+    strBase: {type: Number, default: 0},
+    strGain: {type: Number, default: 0},
+    intBase: {type: Number, default: 0},
+    intGain: {type: Number, default: 0},
+    armorBase: {type: Number, default: 0},
+    speedBase: {type: Number, default: 0},
+    damageBase: {type: String, default: ''}
+    }
+}
+
+item Schema: {
+  name: {type: String, default: ''},
+  cost: {type: Number, default: ''},
+  lore: {type: String, default: ''},
+  description: {type: String, default: ''},
+  data: {type: [String], default: []},
+  recipe: {type: [String], default: []},
+  icon: {type: String, default: ''},
+  liveIcon: {type: String, default: ''}
+}

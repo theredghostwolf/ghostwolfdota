@@ -1,0 +1,69 @@
+<!-- public/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <title>Ghostwolf Dota</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+
+    <!-- JS -->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="js/controllers/mainCtrl.js"></script>
+    <script src="js/controllers/guidesCtrl.js"></script>
+    <script src="js/controllers/heroesCtrl.js"></script>
+    <script src="js/services/heroService.js"></script>
+    <script src="js/services/abilityService.js"></script>
+    <script src="js/services/guideService.js"></script>
+    <script src="js/appRoutes.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-app="ghostwolfdota">
+  <div class="container">
+    <div class="row" ng-controller="mainController">
+      <div class="col-md-12">
+        <!-- HEADER -->
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Ghostwolf Dota</a>
+            </div>
+
+            <!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
+            <ul class="nav navbar-nav navbar-left">
+              <li><a href="/">Home</a></li>
+              <li><a href="/heroes">Hero Guides</a></li>
+              <li><a href="#">Non-Hero Guides</a></li>
+              <li><a href="#">Beginners Guide</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-show="!loggedIn">
+              <div class="form-group">
+                <input type="text" name="name" value="" ng-model="playerLoginId" placeholder="PlayerID">
+              </div>
+              <button type="button" name="button">Login</button>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-show="loggedIn">
+              <li><a href="https://www.opendota.com/players/{{playerID}}">{{playerID}}</a></li>
+              <li ng-click="playerID = ''; loggedIn = !loggedIn"><a href="#">Logout</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <!-- ANGULAR DYNAMIC CONTENT -->
+      <div class="col-md-12 view" ng-view> </div>
+    </div>
+  </div>
+</body>
+</html>

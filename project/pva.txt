@@ -1,0 +1,17 @@
+Plan Van Aanpak:
+
+* setup mongodb
+* setup mongo collections
+* setup basic node.js server
+* gather data to fill Mongodb
+* start working on back-end (handle db calls, etc..)
+* work on route handling
+* create back-end services and controllers
+* start making the front-end functional
+* work on UI design and layout
+* add back-end functions as needed throughout working on the front-end
+* add content
+* fix bugs
+* clean-up front-end
+* Search Engine Optimalization
+* if still time left, improve back-end effciency and performance

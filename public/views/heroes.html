@@ -1,0 +1,62 @@
+<div class="heroes">
+  <div class="">
+    <span>
+      search
+    </span>
+    <select ng-model="selectedHero" ng-options="hero.localized_name for hero in heroes" style="color:black">
+      <option value="">name</option>
+    </select>
+  </div>
+  <div class="">
+  <table class="table">
+    <thead>
+      <th>
+
+      </th>
+      <th>
+        <a href="#"  ng-click="sortField='localized_name'; reverseSort = !reverseSort"> Name </a>
+      </th>
+      <th >
+        <a href="#"  ng-click="sortField='primary_attr'; reverseSort = !reverseSort"> Main Attribute </a>
+      </th>
+      <th>
+        <a href="#"  ng-click="sortField='attack_type'; reverseSort = !reverseSort"> Attack type </a>
+      </th>
+      <th>
+        roles
+      </th>
+      <th>
+        <a href="#"  ng-click="sortField='has_guide'; reverseSort = !reverseSort"> Guide Available </a>
+      </th>
+    </thead>
+    <tbody>
+
+      <tr ng-repeat="hero in heroes|orderBy:sortField:reverseSort" ng-show="hero.localized_name == selectedHero.localized_name || selectedHero.localized_name == null">
+
+        <td>
+        <a href="/heroes/{{hero.id}}">  <img src="img/heroPortraits/{{hero.name.split('npc_dota_hero_').pop() | lowercase }}_sb.png" alt="{{hero.localized_name}}" title="{{hero.localized_name}}" /> </a>
+        </td>
+        <td>
+          {{hero.localized_name}}
+        </td>
+        <td>
+          <img src="img/icons/{{hero.primary_attr}}.png" alt="{{hero.primary_attr}}" title="{{hero.primary_attr}}" />
+        </td>
+        <td>
+          {{hero.attack_type}}
+        </td>
+        <td>
+          <span ng-repeat="role in hero.roles"> {{role}} </span>
+        </td>
+        <td ng-if="hero.has_guide">
+          <img src="img/icons/checkmark.png" alt="yes" />
+        </td>
+        <td ng-if="hero.has_guide == false">
+          <img src="img/icons/cross.png" alt="no" />
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>

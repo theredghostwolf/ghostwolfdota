@@ -1,0 +1,104 @@
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: #2C3A41;
+  color: #9e9e9e;
+}
+
+.view {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: #323232;
+  border-radius: 10px;
+}
+
+.heroes {
+
+}
+
+.guide {
+
+}
+
+.homePage {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.guide > .intro {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.guide > .intro > .intro-include {
+  text-align: center;
+}
+
+.guide > .intro >.intro-include > pre {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: transparent;
+  border-top: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+  border-left: 0;
+  border-right: 0;
+  color: #9e9e9e;
+  font-size: 18px;
+}
+
+.guide > .tab > .tab-header {
+  background-color: #222;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+
+.guide > .tab > .tab-content {
+
+}
+
+.ability-container {
+  text-align: center;
+  border-top: 1px solid #d1d1d1;
+  border-radius: 15px;
+  padding-top: 5px;
+  height: 240px;
+}
+
+.ability-desc {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.guide > .tab > .skills > pre {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: transparent;
+  border-top: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+  border-left: 0;
+  border-right: 0;
+  color: #9e9e9e;
+  font-size: 18px;
+}
+
+.skillbuild {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.skillbuild > .skillpoint-distribution > .skillpoint-row {
+  float: left;
+}
+
+.skillbuild > .skillpoint-distribution > .skillpoint-row > .skillpoint-square {
+  width: 40px;
+  height: 107px;
+  border: 1px solid black;
+}
+
+.skillbuild > .skillpoint-distribution > .skillpoint-row > .skillpoint-square > div {
+  width: 40px;
+  height: 107px;
+}
+
+.skillbuild > .icons {
+  float: left;
+}

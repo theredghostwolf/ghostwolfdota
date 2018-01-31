@@ -1,0 +1,32 @@
+<div class="">
+
+
+<div class="col-md-{{12 / hero.abilities.length}} ability-container" ng-repeat="ability in hero.abilities" ng-mouseenter="showAbility(ability)">
+  <img src="img/abilities/{{ability.icon}}" alt="{{ability.name}}" style="border-radius: 20px; border: 1px solid black;" />
+  <h3>{{ability.name}}</h3>
+  <h5>{{ability.lore}}</h5>
+</div>
+
+<div class="col-md-12 ability-desc" ng-show="hoverOverAbility != null">
+  {{hoverOverAbility.description}}
+  <table class="table">
+    <tbody>
+      <tr ng-repeat="x in hoverOverAbility.data">
+        <td>
+          {{x}}
+        </td>
+      </tr>
+      <tr ng-show="hoverOverAbility.mana != ''">
+        <td>
+          <img src="img/icons/mana.png" alt="mana cost" /> {{hoverOverAbility.mana}}
+        </td>
+      </tr>
+      <tr  ng-show="hoverOverAbility.cooldown != ''">
+        <td>
+          <img src="img/icons/cooldown.png" alt="cooldown" /> {{hoverOverAbility.cooldown}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

@@ -1,0 +1,9 @@
+
+Project naam: "ghostwolf dota"
+doel: een website waar ik guides kan plaatsen voor Dota 2, en waar mensen hun performance kunnen analyzen.
+
+functies:
+
+* guides bekijken.
+* opsomming van recent games bekijken.
+* analysis van recent games.

@@ -1,0 +1,29 @@
+<div class="skillbuild" ng-repeat="build in guide.skillbuilds track by $index">
+  <h3>{{build.title}}</h3>
+    {{build.notes}}
+
+  <div class="icons">
+    <div class="ability-icon-holder" ng-repeat="ability in hero.abilities">
+      <img src="img/abilities/{{ability.icon}}" alt="{{ability.icon}}" style="border-radius: 20px; border: 1px solid black"/>
+    </div>
+    <div class="ability-icon-holder">
+      <img src="img/icons/talenttree_lg.png" alt="" style="border-radius: 20px; border: 1px solid black"/>
+    </div>
+  </div>
+  <div class="skillpoint-distribution" ng-repeat="skillpoint in build.build track by $index">
+    <div class="skillpoint-row">
+      {{$index + 1}}
+      <div class="skillpoint-square" ng-repeat="ab in getSkillbuildSize(hero.abilities.length + 1) track by $index">
+        <div class="" ng-show="skillpoint == $index" style="background-color: #485860;">
+
+        </div>
+        <div class="" ng-show="skillpoint != $index" style="background-color: #262b2d;">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    {{build.desc}}
+  </div>
+</div>
