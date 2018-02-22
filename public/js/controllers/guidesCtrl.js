@@ -167,23 +167,3 @@ angular.module('guidesCtrl', []).controller('guidesController', function($scope,
 
 
 });
-
-I have recently been playing a decent amount of windranger as position 4 or as a greedy pos 5. with a decent amount of success. 68% winrate during patch 7.07 over a somewhat small sample size of 25 games. and i wanted to share my thoughts on this way of playing windranger.
-
-[opendota](https://www.opendota.com/players/104542722/matches?hero_id=21&patch=26)
-
-right now i think windranger is a lackluster mid and doesnt really fill the role that is usally required from the offlane (initiator or tank usually), she also isnt too amazing on the offlane if the enemy has a bunch of nukes due to her low hp, armor and mediocre escape.
-
-this makes her best suited for support as all her skills are pretty good on lvl 1.
-
-what she offers is a 2-3.8 second stun, a 180 - 420 damage 2600 range nuke and has an escape / positioning spell which once you hit level 10 is an insane slow. later on she also adds some decent damage for taking objectives or for taking out low armor / hp targets with her ult.
-
-what she lacks however is reliability as 2 of her core skills are "skillshots". she also lacks sustain and is relatively squishy although windrun helps with that.
-
-so how do we build her?
-
-skillbuild:
-
-lvl 1 powershot as 180 for a level one nuke is insane and due to its range you can often hit 2 before the target leaves the range. lvl 2 put a point into shackle shot a 2 second stun for only 1 skill point is enough for now, we will max the other skills first after this.
-
-then start to max powershot and take windrun at level 4 and 6 and max it after powershot is maxed. skip ult till 11 and 12 because you wont have any items early to use it anyway and the 50% damage reduction means a stout shield pretty much counters you.
